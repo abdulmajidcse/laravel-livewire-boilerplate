@@ -32,7 +32,7 @@
         </div>
 
         <div class="row">
-            {{-- <div class="col-8">
+            {{-- <div class="col-md-8">
                 <div class="icheck-primary">
                     <input type="checkbox" id="agreeTerms" name="terms" @if (old('terms')) checked @endif />
                     <label for="agreeTerms">

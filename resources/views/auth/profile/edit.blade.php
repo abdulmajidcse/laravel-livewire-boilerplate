@@ -10,16 +10,16 @@
             <a href="{{ url('dashboard') }}" class="btn btn-primary"><i class="fas fa-backward mr-1"></i> Back </a>
         </x-slot>
 
-        <div class="p-4 bg-white shadow">
-            @include('profile.partials.update-profile-information-form')
+        <div class="p-4 shadow">
+            @include('auth.profile.partials.update-profile-information-form')
         </div>
 
-        <div class="p-4 bg-white shadow">
-            @include('profile.partials.update-password-form')
+        <div class="p-4 shadow">
+            @include('auth.profile.partials.update-password-form')
         </div>
 
-        <div class="p-4 bg-white shadow">
-            @include('profile.partials.delete-user-form')
+        <div class="p-4 shadow">
+            @include('auth.profile.partials.delete-user-form')
         </div>
     </x-app-card>
 </x-app-layout>

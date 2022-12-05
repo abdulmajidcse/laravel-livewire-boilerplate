@@ -16,6 +16,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
 
+Route::get('theme', function () {
+    if (session()->get('theme') == 'dark') {
+        session()->put('theme', 'light');
+    } else {
+        session()->put('theme', 'dark');
+    }
+
+    return back();
+})->name('theme');
+
 Route::prefix('auth')->group(function () {
     Route::name('auth.')->group(function () {
         Route::view('/', 'auth.dashboard')->middleware(['auth', 'verified'])->name('dashboard');

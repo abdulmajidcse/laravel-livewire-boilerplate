@@ -1,12 +1,12 @@
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand navbar-dark">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ url('/') }}" class="nav-link">Visit Site</a>
+        <li class="nav-item">
+            <a href="{{ url('/') }}" class="nav-link" title="{{ __('Visit Site') }}"><i class="fas fa-home"></i></a>
         </li>
     </ul>
 
@@ -14,8 +14,8 @@
     <ul class="navbar-nav ml-auto">
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="fas fa-user-circle"></i> {{ auth()->user()->name }}
+            <a class="nav-link" data-toggle="dropdown" href="#" title="{{ __('Profile') }}">
+                <i class="fas fa-user-circle mr-1"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <a href="{{ route('profile.edit') }}" class="dropdown-item">
@@ -33,9 +33,7 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                <i class="fas fa-th-large"></i>
-            </a>
+            <x-theme />
         </li>
     </ul>
 </nav>

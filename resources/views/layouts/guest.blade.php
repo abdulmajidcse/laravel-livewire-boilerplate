@@ -15,14 +15,20 @@
     <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+
+    @stack('styles')
 </head>
 
 <body class="hold-transition {{ request()->routeIs('register') ? 'register' : 'login' }}-page">
+    <!-- Preloader -->
+    <x-loading preloader />
+
     <div class="{{ request()->routeIs('register') ? 'register' : 'login' }}-box">
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
                 <a href="{{ url('/') }}" class="h1"><strong>{{ config('app.name') }}</strong></a>
+                <x-theme style="position: fixed; top: 20px; right: 30px;" />
             </div>
             <div class="card-body">
                 {{ $slot }}
@@ -39,6 +45,8 @@
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
+
+    @stack('scripts')
 </body>
 
 </html>

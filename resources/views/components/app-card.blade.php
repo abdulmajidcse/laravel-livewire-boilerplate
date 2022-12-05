@@ -18,6 +18,8 @@
 <!-- Main content -->
 <div class="content">
     <div class="container-fluid">
+        <!-- Session Status -->
+        <x-auth-session-status class="mb-4" :status="session('status')" />
         {{ $slot }}
     </div><!-- /.container-fluid -->
 </div>

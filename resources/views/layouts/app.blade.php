@@ -9,12 +9,10 @@
     <x-auth.styles />
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed dark-mode">
 
     <!-- Preloader -->
-    <div class="preloader flex-column justify-content-center align-items-center">
-        <button type="button" class="btn btn-danger">Please wait...</button>
-    </div>
+    <x-loading preloader />
 
     <div class="wrapper">
 
@@ -27,16 +25,6 @@
             {{ $slot }}
         </div>
         <!-- /.content-wrapper -->
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-            <div class="p-3">
-                <h5>Title</h5>
-                <p>Sidebar content</p>
-            </div>
-        </aside>
-        <!-- /.control-sidebar -->
 
         <x-auth.footer />
     </div>
