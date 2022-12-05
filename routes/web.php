@@ -16,22 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
 
-Route::get('theme', function () {
-    if (session()->get('theme') == 'dark') {
-        session()->put('theme', 'light');
-    } else {
-        session()->put('theme', 'dark');
-    }
-
-    return back();
-})->name('theme');
-
 Route::prefix('auth')->group(function () {
     Route::name('auth.')->group(function () {
         Route::view('/', 'auth.dashboard')->middleware(['auth', 'verified'])->name('dashboard');
     });
 
-    Route::middleware('auth')->group(function () {
+    Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

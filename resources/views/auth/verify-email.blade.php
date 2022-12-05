@@ -2,7 +2,7 @@
     <x-slot name="tabTitle">{{ __('Confirm Password') }}</x-slot>
 
     <p class="login-box-msg">
-        {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
+        {{ __('Thanks for register! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
     </p>
 
     @if (session('status') == 'verification-link-sent')
