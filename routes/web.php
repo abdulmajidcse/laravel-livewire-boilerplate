@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'home')->name('home');
 
 Route::prefix('auth')->group(function () {
-    Route::name('auth.')->group(function () {
-        Route::view('/', 'auth.dashboard')->middleware(['auth', 'verified'])->name('dashboard');
-    });
+    Route::middleware(['auth'])->group(function () {
+        Route::name('auth.')->group(function () {
+            Route::view('/', 'auth.dashboard')->name('dashboard');
+        });
 
-    Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
