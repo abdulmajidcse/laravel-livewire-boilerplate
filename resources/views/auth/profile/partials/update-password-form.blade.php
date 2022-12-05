@@ -37,7 +37,7 @@
             <button type="submit" class="btn btn-primary mt-2">{{ __('Save') }}</button>
 
             @if (session('status') === 'password-updated')
-                <p>{{ __('Saved.') }}</p>
+                <p class="text-success">{{ __('Saved.') }}</p>
             @endif
         </div>
     </form>

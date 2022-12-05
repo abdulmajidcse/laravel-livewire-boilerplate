@@ -6,6 +6,9 @@
             <h1 class="m-0">{{ __('Dashboard') }}</h1>
         </x-slot>
 
+        <!-- Session Status -->
+        <x-auth-session-status class="mb-4" :status="session('status')" />
+
         <!-- Info boxes -->
         <div class="row">
             <div class="col-12 col-sm-6 col-md-3">

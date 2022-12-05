@@ -2,7 +2,7 @@
 
 @if ($status)
     <div
-        {{ $attributes->merge(['class' => 'alert alert-info alert-dismissible fade show bg-purple', 'role' => 'alert']) }}>
+        {{ $attributes->merge(['class' => 'alert alert-primary alert-dismissible fade show', 'role' => 'alert']) }}>
         {{ $status }}
         <button type="button" class="close text-white" style="opacity: 1;" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>

@@ -19,8 +19,8 @@
 
         <div>
             <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1" :value="old('name', $user->name)" required autofocus
-                autocomplete="name" />
+            <x-text-input id="name" name="name" type="text" class="mt-1" :value="old('name', $user->name)" required
+                autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
@@ -35,14 +35,13 @@
                     <p class="text-sm mt-2">
                         {{ __('Your email address is unverified.') }}
 
-                        <button form="send-verification"
-                            class="underline text-sm">
+                        <button form="send-verification" class="btn btn-danger btn-sm">
                             {{ __('Click here to re-send the verification email.') }}
                         </button>
                     </p>
 
                     @if (session('status') === 'verification-link-sent')
-                        <p class="mt-2 text-sm">
+                        <p class="mt-2 text-sm text-success">
                             {{ __('A new verification link has been sent to your email address.') }}
                         </p>
                     @endif
@@ -54,7 +53,7 @@
             <button type="submit" class="btn btn-primary mt-2">{{ __('Save') }}</button>
 
             @if (session('status') === 'profile-updated')
-                <p>{{ __('Saved.') }}</p>
+                <p class="text-success">{{ __('Saved.') }}</p>
             @endif
         </div>
     </form>
